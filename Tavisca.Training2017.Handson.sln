@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnagramsCodeJam", "Anagrams
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineersPrimesCodeJam", "EngineersPrimesCodeJam\EngineersPrimesCodeJam.csproj", "{99216264-EDBB-4C92-B486-5640AB0C7DAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LOTR_CodeJam", "LOTR_CodeJam\LOTR_CodeJam.csproj", "{652ECE2C-E6DE-4C03-B1E1-803D0F27D5F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{99216264-EDBB-4C92-B486-5640AB0C7DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99216264-EDBB-4C92-B486-5640AB0C7DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99216264-EDBB-4C92-B486-5640AB0C7DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{652ECE2C-E6DE-4C03-B1E1-803D0F27D5F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652ECE2C-E6DE-4C03-B1E1-803D0F27D5F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652ECE2C-E6DE-4C03-B1E1-803D0F27D5F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652ECE2C-E6DE-4C03-B1E1-803D0F27D5F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
