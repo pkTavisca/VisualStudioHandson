@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UnitTestingMockClasses;
+using Moq;
 
 namespace NumberManipulationTesting
 {
@@ -37,6 +38,13 @@ namespace NumberManipulationTesting
         public void Test_No_Of_Digits_With_0()
         {
             Assert.AreEqual(1, nm.NoOfDigits(0));
+        }
+        [TestMethod]
+        public void Mock_Test_No_Of_Digits_With_0()
+        {
+            Mock<NumberManipulation> nmMock = new Mock<NumberManipulation>();
+            nmMock.Setup(x => x.NoOfDigits(0)).Returns(1);
+            Assert.AreEqual(1, nmMock.Object.NoOfDigits(0));
         }
         [TestMethod]
         public void Test_Magic_no()

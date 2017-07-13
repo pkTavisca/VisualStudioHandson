@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CodeJam
 {
@@ -14,29 +15,41 @@ namespace CodeJam
             int[] changesInAllPeriods = new int[maxPeriod];
             for (int period = 1; period <= maxPeriod; period++)
             {
-                int noOfChangesInPeriod = 0;
-                int maxGroups = (int)(Math.Ceiling(combined.Length / (double)period));
-                int[] noOfChangesInGroup = new int[maxGroups];
-                for (int group = 0; group < maxGroups; group++)
+                int changesForPeriod = 0;
+                for (int posInPeriod = 0; posInPeriod < period; posInPeriod++)
                 {
-                    for (int inPeriodIndex = 0; inPeriodIndex < period && group * period + inPeriodIndex < combined.Length; inPeriodIndex++)
+                    Dictionary<char, int> charMap = new Dictionary<char, int>();
+                    for (int charMapper = posInPeriod; charMapper < combined.Length; charMapper += period)
                     {
-                        int currentPosition = inPeriodIndex;
-                        while (currentPosition < combined.Length)
+                        if (charMap.ContainsKey(combined[charMapper]))
                         {
-                            if (combined[currentPosition] != combined[period * group + inPeriodIndex])
-                            {
-                                noOfChangesInGroup[group]++;
-                            }
-                            currentPosition += period;
+                            charMap[combined[charMapper]]++;
+                        }
+                        else
+                        {
+                            charMap.Add(combined[charMapper],1);
                         }
                     }
+                    changesForPeriod += TotalMinusMax(charMap);
                 }
-                if (combined.Length % maxPeriod != 0) noOfChangesInGroup[maxGroups - 1] = noOfChangesInGroup[0];
-                noOfChangesInPeriod = MinInArray(noOfChangesInGroup);
-                changesInAllPeriods[period - 1] = noOfChangesInPeriod;
+                changesInAllPeriods[period - 1] = changesForPeriod;
             }
             return MinInArray(changesInAllPeriods);
+        }
+
+        private int TotalMinusMax(Dictionary<char, int> charMap)
+        {
+            int total = 0;
+            var enumerator = charMap.GetEnumerator();
+            enumerator.MoveNext();
+            int max = enumerator.Current.Value;
+            foreach (KeyValuePair< char, int> entry in charMap)
+            {
+                if (entry.Value > max)
+                    max = entry.Value;
+                total += entry.Value;
+            }
+            return total - max;
         }
 
         int MinInArray(int[] arr)

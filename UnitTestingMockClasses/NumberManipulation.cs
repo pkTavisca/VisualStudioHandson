@@ -33,7 +33,11 @@ namespace UnitTestingMockClasses
 
         public int SumOfDigits(int num)
         {
-            if (NoOfDigits(num) == 1) return num;
+            if (NoOfDigits(num) == 1)
+            {
+                return num;
+            }
+
             int sumOfDigits = 0;
             for (int i = 0; num > 0; i++)
             {
