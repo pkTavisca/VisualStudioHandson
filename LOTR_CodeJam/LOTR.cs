@@ -1,15 +1,15 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
-using System.Linq;
+using System.Collections;
+using System.Text.RegularExpressions;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace LOTR_CodeJam
+namespace CodeJam
 {
-    class Program
+    class LOTR
     {
-
-        static int GetMinimum(int[] replies)
+        int GetMinimum(int[] replies)
         {
             int minPeople = 0;
             Dictionary<int, int> heightGrouper = new Dictionary<int, int>();
@@ -31,11 +31,19 @@ namespace LOTR_CodeJam
             return minPeople;
         }
 
-        static void Main(string[] args)
+        #region Testing code Do not change
+        public static void Main(String[] args)
         {
-            int[] replies = { 2, 2, 44, 2, 2, 2, 444, 2, 2 };
-            Console.WriteLine(GetMinimum(replies));
-            Console.ReadKey();
+            LOTR lotr = new LOTR();
+            String input = Console.ReadLine();
+            do
+            {
+                int[] replies = Array.ConvertAll<string, int>(input.Split(','), delegate (string s) { return Int32.Parse(s); });
+                Console.WriteLine(lotr.GetMinimum(replies));
+                input = Console.ReadLine();
+            } while (input != "-1");
         }
+        #endregion
+
     }
 }
