@@ -17,9 +17,8 @@ namespace CodeJam
             int noOfPrimesFound = 1;
             int num = 3;
             while (noOfPrimesFound < n)
-
             {
-                if (IsNotDivisibleByList(num, primes))
+                if (IsPrime(num, primes))
                 {
                     primes.Add(num);
                     noOfPrimesFound++;
@@ -30,7 +29,7 @@ namespace CodeJam
             return (long)last * last;
         }
 
-        private bool IsNotDivisibleByList(int num, ArrayList primes)
+        private bool IsPrime(int num, ArrayList primes)
         {
             double sqrt = Math.Sqrt(num);
             foreach (int n in primes)

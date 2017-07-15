@@ -10,29 +10,34 @@ namespace Codejam
         public int Complete(int[] arr)
         {
             int missingIndex = 0;
-            int result = 0;
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] == -1)
+                {
                     missingIndex = i;
+                    break;
+                }
+                if (i > 2)
+                {
+                    if (arr[i] != arr[i - 3] + arr[i - 2] + arr[i - 1])
+                        return -1;
+                }
             }
             if (missingIndex > 2)
             {
-                result = arr[missingIndex - 3] + arr[missingIndex - 2] + arr[missingIndex - 1];
-                arr[missingIndex] = result;
+                arr[missingIndex] = arr[missingIndex - 3] + arr[missingIndex - 2] + arr[missingIndex - 1];
             }
             else
             {
-                result = arr[3]-(arr[0] + arr[1] + arr[2] + 1);
-                arr[missingIndex] = result;
+                arr[missingIndex] = arr[3] - (arr[0] + arr[1] + arr[2] + 1);
             }
-            if (result < 1) return -1;
-            for (int i=3;i<arr.Length;i++)
+            if (arr[missingIndex] < 1) return -1;
+            for (int i = missingIndex > 2 ? missingIndex : 3; i < arr.Length; i++)
             {
                 if (arr[i] != arr[i - 3] + arr[i - 2] + arr[i - 1])
                     return -1;
             }
-            return result;
+            return arr[missingIndex];
         }
 
         #region Testing code Do not change

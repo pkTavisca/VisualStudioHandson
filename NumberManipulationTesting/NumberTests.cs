@@ -43,7 +43,7 @@ namespace NumberManipulationTesting
         public void Mock_Test_No_Of_Digits_With_0()
         {
             Mock<NumberManipulation> nmMock = new Mock<NumberManipulation>();
-            nmMock.Setup(x => x.NoOfDigits(0)).Returns(1);
+            nmMock.Setup(x => x.NoOfDigits(It.IsAny<int>())).Returns(1);
             Assert.AreEqual(1, nmMock.Object.NoOfDigits(0));
         }
         [TestMethod]

@@ -12,19 +12,19 @@ namespace CodeJam
         int GetMinimum(int[] replies)
         {
             int minPeople = 0;
-            Dictionary<int, int> heightGrouper = new Dictionary<int, int>();
+            Dictionary<int, int> dict = new Dictionary<int, int>();
             for (int i = 0; i < replies.Length; i++)
             {
-                if (heightGrouper.ContainsKey(replies[i]))
+                if (dict.ContainsKey(replies[i]))
                 {
-                    heightGrouper[replies[i]]++;
+                    dict[replies[i]]++;
                 }
                 else
                 {
-                    heightGrouper.Add(replies[i], 1);
+                    dict.Add(replies[i], 1);
                 }
             }
-            foreach (KeyValuePair<int, int> entry in heightGrouper)
+            foreach (KeyValuePair<int, int> entry in dict)
             {
                 minPeople += (entry.Key + 1) * (int)Math.Ceiling(entry.Value / (double)(entry.Key + 1));
             }
