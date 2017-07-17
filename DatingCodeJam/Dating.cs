@@ -25,6 +25,7 @@ namespace Codejam
             }
             men.Sort();
             women.Sort();
+
             int position = k % people.Count;
 
             while (men.Count > 0 && women.Count > 0)

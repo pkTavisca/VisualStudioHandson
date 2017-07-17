@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "Stack\Stack.csproj", "{3C249A06-4A4B-4675-8116-DD50F1788B46}"
 EndProject
@@ -44,6 +44,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeZoneCodeJam", "TimeZoneCodeJam\TimeZoneCodeJam.csproj", "{5FDFC956-BF32-4850-8ADB-86F09D995216}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingCodeJam", "DatingCodeJam\DatingCodeJam.csproj", "{14142513-5111-4EDE-A6B5-2A15D2EA05B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptionCodeJam", "EncryptionCodeJam\EncryptionCodeJam.csproj", "{13E15253-D71D-4DC3-968D-51B299CA044D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +137,10 @@ Global
 		{14142513-5111-4EDE-A6B5-2A15D2EA05B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14142513-5111-4EDE-A6B5-2A15D2EA05B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14142513-5111-4EDE-A6B5-2A15D2EA05B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E15253-D71D-4DC3-968D-51B299CA044D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E15253-D71D-4DC3-968D-51B299CA044D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E15253-D71D-4DC3-968D-51B299CA044D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E15253-D71D-4DC3-968D-51B299CA044D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
