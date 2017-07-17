@@ -8,23 +8,24 @@ namespace Codejam
     {
         public string GetTime(string time)
         {
-            int hourTens = -1;
-            int hourUnits = -1;
-            int minsTens = -1;
-            int minsUnits = -1;
-            char sign = time[9];
-            int gmtDeviation = -1;
+            //int hourTens = -1;
+            //int hourUnits = -1;
+            //int minsTens = -1;
+            //int minsUnits = -1;
+            //char sign = time[9];
+            //int gmtDeviation = -1;
 
-            int.TryParse(time[0].ToString(), out hourTens);
-            int.TryParse(time[1].ToString(), out hourUnits);
-            int.TryParse(time[3].ToString(), out minsTens);
-            int.TryParse(time[4].ToString(), out minsUnits);
-            int.TryParse(time[10].ToString(), out gmtDeviation);
+            //int.TryParse(time[0].ToString(), out hourTens);
+            //int.TryParse(time[1].ToString(), out hourUnits);
+            //int.TryParse(time[3].ToString(), out minsTens);
+            //int.TryParse(time[4].ToString(), out minsUnits);
+            //int.TryParse(time[10].ToString(), out gmtDeviation);
 
-            for (int hourTensCtr = 0; hourTensCtr < 10;)
+            int i = 0;
+            do
             {
-
-            }
+                Console.WriteLine(i++);
+            } while (i<5);
 
             return String.Empty;
         }

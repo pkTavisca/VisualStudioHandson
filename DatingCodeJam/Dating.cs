@@ -49,7 +49,7 @@ namespace Codejam
                     men.Remove(man);
                     Remove(ref position, people.IndexOf(man), people);
                 }
-                if (k > 1)
+                if (k > 1 && people.Count > 0)
                     position = (position + k - 1) % people.Count;
             }
 
