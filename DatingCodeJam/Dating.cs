@@ -18,76 +18,60 @@ namespace Codejam
             for (int i = 0; i < circle.Length; i++)
             {
                 people.Add(circle[i]);
-                if (IsFemale(circle[i]))
-                    women.Add(circle[i]);
                 if (IsMale(circle[i]))
                     men.Add(circle[i]);
+                else
+                    women.Add(circle[i]);
             }
             men.Sort();
             women.Sort();
 
-            int position = k % people.Count;
+            int position = (k - 1) % people.Count;
 
             while (men.Count > 0 && women.Count > 0)
             {
-                char individual = (char)people[position - 1];
+                char individual = (char)people[position];
                 if (IsMale(individual))
                 {
                     char woman = (char)women[0];
                     dates += individual.ToString() + woman + " ";
-                    int indexI = people.IndexOf(individual);
-                    int indexF = people.IndexOf(woman);
-                    if (indexI < position - 1)
-                    {
-                        position--;
-                        position %= people.Count;
-                    }
-                    if (indexF < position - 1)
-                    {
-                        position--;
-                        position %= people.Count;
-                    }
                     men.Remove(individual);
+                    Remove(ref position, people.IndexOf(individual), people);
                     women.Remove(woman);
-                    people.Remove(individual);
-                    people.Remove(woman);
+                    Remove(ref position, people.IndexOf(woman), people);
                 }
-                else if (IsFemale(individual))
+                else
                 {
                     char man = (char)men[0];
                     dates += individual.ToString() + man + " ";
-                    int indexI = people.IndexOf(individual);
-                    int indexM = people.IndexOf(man);
-                    if (indexI < position - 1)
-                    {
-                        position--;
-                        position %= people.Count;
-                    }
-                    if (indexM < position - 1)
-                    {
-                        position--;
-                        position %= people.Count;
-                    }
                     women.Remove(individual);
+                    Remove(ref position, people.IndexOf(individual), people);
                     men.Remove(man);
-                    people.Remove(individual);
-                    people.Remove(man);
+                    Remove(ref position, people.IndexOf(man), people);
                 }
-                position = ((position - 1 + k) % people.Count) + 1;
+                if (k > 1)
+                    position = (position + k - 1) % people.Count;
             }
 
             return dates.TrimEnd();
         }
 
+        void Remove(ref int position, int toRemoveIndex, ArrayList circle)
+        {
+            if (toRemoveIndex < position)
+            {
+                position--;
+            }
+            else if (toRemoveIndex == position && position == circle.Count - 1)
+            {
+                position = 0;
+            }
+            circle.RemoveAt(toRemoveIndex);
+        }
+
         bool IsMale(char c)
         {
             if (c >= 'A' && c <= 'Z')
-                return true;
-            return false;
-        }
-        bool IsFemale(char c)
-        {
-            if (c >= 'a' && c <= 'z')
                 return true;
             return false;
         }
