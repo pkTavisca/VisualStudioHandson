@@ -27,7 +27,7 @@ namespace CodeJam
                         }
                         else
                         {
-                            charMap.Add(combined[charMapper],1);
+                            charMap.Add(combined[charMapper], 1);
                         }
                     }
                     changesForPeriod += TotalMinusMax(charMap);
@@ -43,7 +43,7 @@ namespace CodeJam
             var enumerator = charMap.GetEnumerator();
             enumerator.MoveNext();
             int max = enumerator.Current.Value;
-            foreach (KeyValuePair< char, int> entry in charMap)
+            foreach (KeyValuePair<char, int> entry in charMap)
             {
                 if (entry.Value > max)
                     max = entry.Value;

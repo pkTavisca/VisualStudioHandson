@@ -37,7 +37,6 @@ namespace Codejam
                 }
             }
 
-
             if (data.Length == 0)
                 Console.WriteLine("Enter More than one Value");
             return sum;
