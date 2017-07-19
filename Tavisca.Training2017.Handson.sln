@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServicesTraining", "WebS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RGB_CodeJam", "RGB_CodeJam\RGB_CodeJam.csproj", "{0EF27C5F-0929-4574-863C-79C9B2B085AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssembledCodejams", "AssembledCodejams\AssembledCodejams.csproj", "{74FD0E81-87EE-4F3D-A3C4-1DEE616AB29D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{0EF27C5F-0929-4574-863C-79C9B2B085AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EF27C5F-0929-4574-863C-79C9B2B085AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EF27C5F-0929-4574-863C-79C9B2B085AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74FD0E81-87EE-4F3D-A3C4-1DEE616AB29D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74FD0E81-87EE-4F3D-A3C4-1DEE616AB29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74FD0E81-87EE-4F3D-A3C4-1DEE616AB29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74FD0E81-87EE-4F3D-A3C4-1DEE616AB29D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

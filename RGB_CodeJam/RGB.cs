@@ -6,40 +6,101 @@ namespace Codejam
 {
     class RGB
     {
+        bool[][] consideredRed;
+        bool[][] consideredBlue;
+        string[] picture;
+        int totalLines;
         int GetLeast(string[] picture)
         {
-            int totalLines = 0;
+            totalLines = 0;
+            consideredRed = new bool[picture.Length][];
+            consideredBlue = new bool[picture.Length][];
+            this.picture = picture;
 
-            bool[][] considered = new bool[picture.Length][];
-            InitializeConsideredArray(ref considered);
+            InitializeConsideredArray();
 
             for (int i = 0; i < picture.Length; i++)
             {
                 for (int j = 0; j < picture[i].Length; j++)
                 {
-                    if (picture[i][j] != '.' && !considered[i][j])
-                        totalLines += Process(i, j, picture, ref considered);
+                    if (picture[i][j] != '.' && (!consideredRed[i][j] || !consideredBlue[i][j]))
+                    {
+                        Process(i, j);
+                    }
                 }
             }
-
             return totalLines;
         }
 
-        private int Process(int x, int y, string[] picture, ref bool[][] considered)
+        private void Process(int y, int x)
         {
-            int lines = 0;
-            if (picture[x][y] == 'R')
+            if (picture[y][x] == 'R')
             {
-
+                if (!consideredRed[y][x])
+                    ProcessX(y, x);
             }
-            return 0;
+            else if (picture[y][x] == 'B')
+            {
+                if (!consideredBlue[y][x])
+                    ProcessY(y, x);
+            }
+            else if (picture[y][x] == 'G')
+            {
+                if (!consideredRed[y][x])
+                    ProcessX(y, x);
+                if (!consideredBlue[y][x])
+                    ProcessY(y, x);
+            }
         }
 
-        private void InitializeConsideredArray(ref bool[][] considered)
+        private void ProcessX(int y, int x)
         {
-            for (int i = 0; i < considered.Length; i++)
+            totalLines++;
+            for (int i = x; i >= 0; i--)
             {
-                considered[i] = new bool[considered.Length];
+                if (picture[y][i] == 'R' || picture[y][i] == 'G')
+                {
+                    consideredRed[y][i] = true;
+                }
+                else break;
+            }
+            for (int i = x + 1; i < picture[y].Length; i++)
+            {
+                if (picture[y][i] == 'R' || picture[y][i] == 'G')
+                {
+                    consideredRed[y][i] = true;
+                }
+                else break;
+            }
+        }
+
+        private void ProcessY(int y, int x)
+        {
+            totalLines++;
+            for (int i = y; i >= 0; i--)
+            {
+                if (picture[i][x] == 'B' || picture[i][x] == 'G')
+                {
+                    consideredBlue[i][x] = true;
+                }
+                else break;
+            }
+            for (int i = y + 1; i < picture.Length; i++)
+            {
+                if (picture[i][x] == 'B' || picture[i][x] == 'G')
+                {
+                    consideredBlue[i][x] = true;
+                }
+                else break;
+            }
+        }
+
+        private void InitializeConsideredArray()
+        {
+            for (int i = 0; i < consideredRed.Length; i++)
+            {
+                consideredRed[i] = new bool[picture[i].Length];
+                consideredBlue[i] = new bool[picture[i].Length];
             }
         }
 
