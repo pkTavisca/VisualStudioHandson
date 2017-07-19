@@ -42,8 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayCopy.cs" />
+    <Compile Include="EvenOrOdd.cs" />
+    <Compile Include="MailingAddress.cs" />
+    <Compile Include="NumberSwap.cs" />
+    <Compile Include="OutKeyword.cs" />
+    <Compile Include="PatternThroughLoop.cs" />
+    <Compile Include="PowerOfNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RectangleCalculations.cs" />
+    <Compile Include="ReferenceTypeAndValueType.cs" />
+    <Compile Include="ReturningValues.cs" />
+    <Compile Include="StringReverse.cs" />
+    <Compile Include="StudentInformation.cs" />
+    <Compile Include="TaxCalculation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

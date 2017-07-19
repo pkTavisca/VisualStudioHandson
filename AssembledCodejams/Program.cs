@@ -10,6 +10,20 @@ namespace AssembledCodejams
     {
         static void Main(string[] args)
         {
+            //MailingAddress.DisplayMailingAddress();
+            //StudentInformation.DisplayStudentInformation();
+            //EvenOrOdd.FindEvenOrOdd();
+            //PowerOfNumber.PowerOfNum();
+            //TaxCalculation.CalculateTax();
+            //ReturningValues.ReturnSomething();
+            //PatternThroughLoop.GeneratePattern();
+            //ReferenceTypeAndValueType.Display();
+            //OutKeyword.UseOutKeyword();
+            //RectangleCalculations.Calculate();
+            //ArrayCopy.CopyArrayElements();
+            //StringReverse.ReverseString();
+            NumberSwap.SwapNumber();
+            Console.ReadKey();
         }
     }
 }
