@@ -6,11 +6,15 @@ namespace Codejam
 {
     class RGB
     {
+        bool[][] considered;
+        string[] picture;
+        int totalLines;
         int GetLeast(string[] picture)
         {
-            int totalLines = 0;
+            totalLines = 0;
+            considered = new bool[picture.Length][];
+            this.picture = picture;
 
-            bool[][] considered = new bool[picture.Length][];
             InitializeConsideredArray(ref considered);
 
             for (int i = 0; i < picture.Length; i++)
@@ -18,21 +22,120 @@ namespace Codejam
                 for (int j = 0; j < picture[i].Length; j++)
                 {
                     if (picture[i][j] != '.' && !considered[i][j])
-                        totalLines += Process(i, j, picture, ref considered);
+                        Process(i, j);
                 }
             }
-
             return totalLines;
         }
 
-        private int Process(int x, int y, string[] picture, ref bool[][] considered)
+        private void Process(int x, int y)
         {
-            int lines = 0;
             if (picture[x][y] == 'R')
             {
+                ProcessX(x, y);
+            }
+            else if (picture[x][y] == 'B')
+            {
+                ProcessY(x, y);
+            }
+            else if(picture[x][y] == 'G')
+            {
+                ProcessG(x, y);
+            }
+        }
+
+        private void ProcessX(int x, int y)
+        {
+            totalLines++;
+            for (int i = x; i >= 0; i--)
+            {
+                if (picture[i][y] == 'R')
+                {
+                    considered[i][y] = true;
+                }
+                else if (picture[i][y] == 'G')
+                {
+                    ProcessY(i, y);
+                    considered[i][y] = true;
+                }
+                else break;
 
             }
-            return 0;
+            for (int i = x; i < picture.Length; i++)
+            {
+                if (picture[i][y] == 'R')
+                {
+                    considered[i][y] = true;
+                }
+                else if (picture[i][y] == 'G')
+                {
+                    ProcessY(i, y);
+                    considered[i][y] = true;
+                }
+                else break;
+            }
+        }
+
+        private void ProcessY(int x, int y)
+        {
+            totalLines++;
+            for (int i = y; i >= 0; i--)
+            {
+                if (picture[x][i] == 'B')
+                {
+                    considered[x][i] = true;
+                }
+                else if (picture[x][i] == 'G')
+                {
+                    ProcessX(x, i);
+                    considered[x][i] = true;
+                }
+                else break;
+            }
+            for (int i = y; i < picture.Length; i++)
+            {
+                if (picture[x][i] == 'B')
+                {
+                    considered[x][i] = true;
+                }
+                else if (picture[x][i] == 'G')
+                {
+                    ProcessX(x, i);
+                    considered[x][i] = true;
+                }
+                else break;
+            }
+        }
+
+        private void ProcessG(int x, int y)
+        {
+            totalLines += 2;
+            for (int i = x; i < picture.Length; i++)
+            {
+                if (picture[i][y] == 'R')
+                {
+                    considered[i][y] = true;
+                }
+                else if (picture[i][y] == 'G')
+                {
+                    ProcessY(i, y);
+                    considered[i][y] = true;
+                }
+                else break;
+            }
+            for (int i = y; i < picture.Length; i++)
+            {
+                if (picture[x][i] == 'B')
+                {
+                    considered[x][i] = true;
+                }
+                else if (picture[x][i] == 'G')
+                {
+                    ProcessX(x, i);
+                    considered[x][i] = true;
+                }
+                else break;
+            }
         }
 
         private void InitializeConsideredArray(ref bool[][] considered)
