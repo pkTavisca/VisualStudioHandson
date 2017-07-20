@@ -8,9 +8,9 @@ namespace AssembledCodejams
 {
     class ReturningValues
     {
-        public static void ReturnSomething()
+        public static void ReturnSomething(int num1, int num2)
         {
-            Console.WriteLine(Add.Addition(5, 8));
+            Console.WriteLine(Add.Addition(num1, num2));
         }
     }
 
