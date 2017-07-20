@@ -14,7 +14,7 @@ namespace AssembledCodejams
             for (int i = 0; i < 4; i++)
             {
                 Console.Write("Enter number {0}:", i + 1);
-                arr[i] = int.Parse(Console.ReadLine());
+                int.TryParse(Console.ReadLine(), out arr[i]);
             }
 
             int add, substract, multiply;

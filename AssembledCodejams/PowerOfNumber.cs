@@ -8,13 +8,17 @@ namespace AssembledCodejams
 {
     class PowerOfNumber
     {
-        public static void PowerOfNum()
+        public static void RaiseNumberToPower()
         {
             Console.Write("Enter a number: ");
-            int num = int.Parse(Console.ReadLine());
+            int num;
+            int.TryParse(Console.ReadLine(), out num);
+
             Console.Write("Enter a power: ");
-            int power = int.Parse(Console.ReadLine());
-            Console.WriteLine("Power of the number is {0}", Math.Pow(num, power));
+            int power;
+            int.TryParse(Console.ReadLine(), out power);
+
+            Console.WriteLine("Number {0} raised to the power {1} is {2}.", num, power, Math.Pow(num, power));
         }
     }
 }

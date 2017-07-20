@@ -12,8 +12,13 @@ namespace AssembledCodejams
         {
             Console.Write("Enter a number: ");
             int num = int.Parse(Console.ReadLine());
-            string evenOrOdd = num % 2 == 0 ? "Even" : "Odd";
+            string evenOrOdd = IsEven(num) ? "Even" : "Odd";
             Console.WriteLine(evenOrOdd);
+        }
+
+        public static bool IsEven(int num)
+        {
+            return num % 2 == 0;
         }
     }
 }

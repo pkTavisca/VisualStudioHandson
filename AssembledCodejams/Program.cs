@@ -13,8 +13,8 @@ namespace AssembledCodejams
             //MailingAddress.DisplayMailingAddress();
             //StudentInformation.DisplayStudentInformation();
             //EvenOrOdd.FindEvenOrOdd();
-            //PowerOfNumber.PowerOfNum();
-            //TaxCalculation.CalculateTax();
+            //PowerOfNumber.RaiseNumberToPower();
+            TaxCalculation.CalculateTax();
             //ReturningValues.ReturnSomething();
             //PatternThroughLoop.GeneratePattern();
             //ReferenceTypeAndValueType.Display();
@@ -22,7 +22,7 @@ namespace AssembledCodejams
             //RectangleCalculations.Calculate();
             //ArrayCopy.CopyArrayElements();
             //StringReverse.ReverseString();
-            NumberSwap.SwapNumber();
+            //NumberSwap.SwapNumber();
             Console.ReadKey();
         }
     }

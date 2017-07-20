@@ -8,19 +8,26 @@ namespace AssembledCodejams
 {
     class ArrayCopy
     {
-        public static void CopyArrayElements(int[] arr)
+        public static int[] CopyArrayElements(int[] arr)
         {
             int[] arrCopy = new int[arr.Length];
             for (int i = 0; i < arr.Length; i++)
             {
                 arrCopy[i] = arr[i];
-                Console.Write(arrCopy[i] + " ");
             }
+            return arrCopy;
         }
         public static void CopyArrayElements()
         {
             int[] arr = { 1, 2, 3 };
-            CopyArrayElements(arr);
+            PrintArray(CopyArrayElements(arr));
+        }
+        public static void PrintArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write("{0} ", array[i]);
+            }
         }
     }
 }

@@ -11,15 +11,25 @@ namespace AssembledCodejams
         public static void Calculate()
         {
             Console.Write("Enter length : ");
-            int length = int.Parse(Console.ReadLine());
+            int length;
+            int.TryParse(Console.ReadLine(), out length);
+
             Console.Write("Enter breadth : ");
-            int breadth = int.Parse(Console.ReadLine());
-            CalculateAreaAndPerimeter(length, breadth);
+            int breadth;
+            int.TryParse(Console.ReadLine(), out breadth);
+
+            Console.WriteLine("Perimeter of the Rectangle: {0}", Perimeter(length, breadth));
+            Console.WriteLine("Area of the Rectangle: {0}", Area(length, breadth));
         }
-        public static void CalculateAreaAndPerimeter(int length, int breadth)
+
+        public static int Area(int length, int breadth)
         {
-            Console.WriteLine("Perimeter : " + ((length + breadth) * 2));
-            Console.WriteLine("Area: " + (length * breadth));
+            return length * breadth;
+        }
+
+        public static int Perimeter(int length, int breadth)
+        {
+            return 2 * (length + breadth);
         }
     }
 }

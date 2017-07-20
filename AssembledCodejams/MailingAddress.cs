@@ -10,18 +10,24 @@ namespace AssembledCodejams
     {
         public static void DisplayMailingAddress()
         {
+            //Input
             Console.Write("Enter user name: ");
             string name = Console.ReadLine();
-            Console.Write("Enter user's city: ");
-            string city = Console.ReadLine();
-            Console.Write("Enter user's street: ");
-            string street = Console.ReadLine();
-            Console.Write("Enter user's pin: ");
-            string pin = Console.ReadLine();
             Console.Write("Enter user's house number: ");
             string houseNo = Console.ReadLine();
+            Console.Write("Enter user's street: ");
+            string street = Console.ReadLine();
+            Console.Write("Enter user's city: ");
+            string city = Console.ReadLine();
+            Console.Write("Enter user's pin: ");
+            long pin;
+            long.TryParse(Console.ReadLine(), out pin);
 
-            Console.WriteLine(name + "\n" + houseNo + "\n" + street + "\n" + city + " - " + pin);
+            //Assigning to an object
+            UserAddress address = new UserAddress(name, houseNo, street, city, pin);
+
+            //Overridden ToString method
+            Console.WriteLine(address.ToString());
         }
     }
 }

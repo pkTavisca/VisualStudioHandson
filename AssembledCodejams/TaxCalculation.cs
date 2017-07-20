@@ -11,11 +11,13 @@ namespace AssembledCodejams
         public static void CalculateTax()
         {
             Console.Write("Enter the money: ");
-            int money = int.Parse(Console.ReadLine());
-            double tax = 0;
-            if (money < 10000) tax = money * 5.0 / 100;
-            else if (money < 100000) tax = money * 8.0 / 100;
-            else tax = money * 8.5 / 100;
+            decimal money;
+            decimal.TryParse(Console.ReadLine(), out money);
+            decimal tax = 0;
+
+            if (money < 10000) tax = Decimal.Multiply(money, Convert.ToDecimal(0.05));
+            else if (money < 100000) tax = Decimal.Multiply(money, Convert.ToDecimal(0.08));
+            else tax = Decimal.Multiply(money, Convert.ToDecimal(0.085));
 
             Console.WriteLine("The tax is " + tax);
         }

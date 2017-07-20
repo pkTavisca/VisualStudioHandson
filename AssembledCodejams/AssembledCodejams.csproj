@@ -55,8 +55,10 @@
     <Compile Include="ReferenceTypeAndValueType.cs" />
     <Compile Include="ReturningValues.cs" />
     <Compile Include="StringReverse.cs" />
+    <Compile Include="Student.cs" />
     <Compile Include="StudentInformation.cs" />
     <Compile Include="TaxCalculation.cs" />
+    <Compile Include="UserAddress.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
