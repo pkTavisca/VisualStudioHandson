@@ -19,7 +19,7 @@ namespace AssembledCodejams
             else if (money < 100000) tax = Decimal.Multiply(money, Convert.ToDecimal(0.08));
             else tax = Decimal.Multiply(money, Convert.ToDecimal(0.085));
 
-            Console.WriteLine("The tax is " + tax);
+            Console.WriteLine("The tax is {0}.", tax);
         }
     }
 }
