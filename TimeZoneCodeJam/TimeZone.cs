@@ -119,7 +119,7 @@ namespace Codejam
             if (time[4] == 1) time[5] *= -1;
             int hour = time[0] * 10 + time[1];
             hour += time[5];
-            if (hour > 23) hour -= 23;
+            if (hour > 23) hour -= 24;
             else if (hour < 0) hour += 24;
             time[0] = hour / 10;
             time[1] = hour % 10;
